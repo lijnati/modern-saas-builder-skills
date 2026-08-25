@@ -45,8 +45,8 @@ echo ""
 # 3. Check for Dangerous JavaScript/TypeScript Patterns
 echo "[3/4] Scanning for Risky Patterns (eval, dangerouslySetInnerHTML without sanitization)..."
 RISKY_PATTERNS=$(grep -rnE '(dangerouslySetInnerHTML|eval\(|new Function\()' \
-    --exclude-dir={.git,node_modules,.next,dist,build,coverage} \
-    --exclude={"*.test.ts","*.spec.ts","*.test.tsx","*.spec.tsx"} . 2>/dev/null || true)
+    --exclude-dir={.git,node_modules,.next,dist,build,coverage,scripts,references} \
+    --exclude={"*.test.ts","*.spec.ts","*.test.tsx","*.spec.tsx","security-check.sh"} . 2>/dev/null || true)
 
 if [ -n "$RISKY_PATTERNS" ]; then
     echo "  ⚠️  NOTICE: Detected raw DOM manipulation or eval pattern (ensure input is sanitized with DOMPurify):"

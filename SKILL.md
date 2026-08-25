@@ -2,8 +2,8 @@
 name: modern-saas-builder
 description: "Founder-minded senior product engineer and SaaS architect skill. Use when building, planning, architecting, validating, designing, testing, securing, deploying, or monetizing modern SaaS products, micro-SaaS, web apps, AI agents, Web3/Base applications, agent commerce, or Telegram bots/Mini Apps. Always active when building new software from scratch or modifying existing codebases with a focus on product excellence, speed to market, and high technical quality."
 metadata:
-  author: "Gemini Agentic Team"
-  version: "1.0.0"
+  author: "lijnati"
+  version: "1.1.0"
 ---
 
 # Modern SaaS Builder
@@ -106,17 +106,32 @@ Consult the specialized reference files as needed for in-depth patterns, archite
 |---|---|
 | Idea validation, JTBD, MVP scoping, pricing signals | `references/product-discovery.md` |
 | Modular monoliths, DB schemas, server boundaries, queues | `references/saas-architecture.md` |
+| Multi-tenancy, Postgres RLS, tenant isolation & ORMs | `references/multi-tenancy-rls.md` |
 | Clean modern SaaS design, dashboards, forms, mobile UX | `references/ui-ux.md` |
 | Auth, RBAC, IDOR prevention, XSS/CSRF, Web3 security | `references/security.md` |
 | Unit, integration, and E2E testing strategy, DoD checklist | `references/testing.md` |
 | Vercel, Docker, CI/CD, logging, zero-downtime migrations | `references/production.md` |
 | Subscriptions, Stripe webhooks, metered billing, churn | `references/monetization.md` |
+| Compliance, GDPR/CCPA data rights, legal & launch readiness | `references/compliance-launch-readiness.md` |
 | Distribution, first 100 users, PLG, SEO, viral loops | `references/growth.md` |
 | AI agent architecture, tool calling, context & eval loops | `references/ai-agents.md` |
+| AI observability, Langfuse/Helicone tracing, evals & costs | `references/ai-observability-evals.md` |
 | Smart contracts, Foundry, Base, EVM token standards | `references/web3.md` |
 | Autonomous agent wallets, spending limits, x402 settlement | `references/agent-commerce.md` |
 | Telegram Bot API, grammY, Mini Apps (TMA), bot state | `references/telegram-products.md` |
 | TypeScript standards, repo hygiene, refactoring playbooks | `references/developer-experience.md` |
+
+---
+
+## Production Starter Templates
+
+Access ready-to-use boilerplate templates in `templates/` using `npx modern-saas scaffold <template>`:
+
+- `templates/docker/docker-compose.prod.yml`: Hardened Docker Compose setup with Postgres, Redis, App, and Caddy SSL.
+- `templates/docker/Dockerfile.nextjs`: Multi-stage standalone Next.js production Dockerfile.
+- `templates/db/multi-tenant-rls.sql`: PostgreSQL Row-Level Security baseline with tenant isolation policies.
+- `templates/billing/stripe-webhook-handler.ts`: Idempotent Next.js Stripe webhook handler.
+- `templates/analytics/posthog-events.ts`: Type-safe SaaS analytics event taxonomy for PostHog/Mixpanel.
 
 ---
 
