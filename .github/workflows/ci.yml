@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    name: Lint, Test & Health Checks
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Verify CLI Doctor and Smoke Tests
+        run: |
+          node bin/cli.js --help
+          node bin/cli.js --version
+          node bin/cli.js doctor
+          node bin/cli.js templates
+
+      - name: Test CLI Export
+        run: |
+          mkdir -p ./scratch
+          node bin/cli.js export --format agents-md --output ./scratch/AGENTS.md
+          test -f ./scratch/AGENTS.md
+
+      - name: Run Bash Scripts Verification
+        run: |
+          bash scripts/verify.sh
+          bash scripts/project-health.sh
+          bash scripts/security-check.sh
