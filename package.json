@@ -4,8 +4,8 @@
   "description": "Founder-minded senior product engineer and SaaS architect skill & CLI for AI agents (Antigravity, Cursor, Claude Code, Windsurf).",
   "main": "bin/cli.js",
   "bin": {
-    "modern-saas": "./bin/cli.js",
-    "modern-saas-builder": "./bin/cli.js"
+    "modern-saas": "bin/cli.js",
+    "modern-saas-builder": "bin/cli.js"
   },
   "keywords": [
     "ai-agents",
