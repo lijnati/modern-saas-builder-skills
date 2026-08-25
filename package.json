@@ -1,0 +1,55 @@
+{
+  "name": "modern-saas-builder",
+  "version": "1.1.0",
+  "description": "Founder-minded senior product engineer and SaaS architect skill & CLI for AI agents (Antigravity, Cursor, Claude Code, Windsurf).",
+  "main": "bin/cli.js",
+  "bin": {
+    "modern-saas": "./bin/cli.js",
+    "modern-saas-builder": "./bin/cli.js"
+  },
+  "keywords": [
+    "ai-agents",
+    "agent-skills",
+    "saas",
+    "antigravity",
+    "cursor-rules",
+    "claude-code",
+    "windsurf",
+    "saas-boilerplate",
+    "fullstack",
+    "product-engineer",
+    "architecture",
+    "security"
+  ],
+  "author": "Lijnati & Contributors",
+  "license": "MIT",
+  "homepage": "https://github.com/lijnati/modern-saas-builder-skills#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lijnati/modern-saas-builder-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lijnati/modern-saas-builder-skills/issues"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "doctor": "node bin/cli.js doctor",
+    "verify": "bash scripts/verify.sh",
+    "health": "bash scripts/project-health.sh",
+    "security": "bash scripts/security-check.sh",
+    "export:agents": "node bin/cli.js export --format agents-md --output AGENTS.md",
+    "export:cursor": "node bin/cli.js export --format cursor --output .cursor/rules/modern-saas-builder.mdc"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "bin",
+    "references",
+    "templates",
+    "scripts",
+    "SKILL.md",
+    "README.md",
+    "LICENSE"
+  ]
+}
