@@ -1,0 +1,14 @@
+{
+  "name": "modern-saas-builder",
+  "version": "1.1.0",
+  "description": "Founder-minded senior product engineer and SaaS architect skill: architecture, security, testing, monetization, AI agents, Web3 and Telegram playbooks.",
+  "author": {
+    "name": "lijnati",
+    "url": "https://github.com/lijnati"
+  },
+  "homepage": "https://github.com/lijnati/modern-saas-builder-skills",
+  "repository": "https://github.com/lijnati/modern-saas-builder-skills",
+  "license": "MIT",
+  "keywords": ["saas", "architecture", "security", "product-engineering", "skill"],
+  "skills": "./"
+}

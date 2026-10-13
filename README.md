@@ -28,6 +28,13 @@ npx modern-saas init antigravity  # Installs to .agents/skills/modern-saas-build
 npx modern-saas init agents       # Creates unified AGENTS.md in workspace
 ```
 
+**Claude Code plugin:** install it from the `lijnati-skills` marketplace instead, so it updates with `/plugin marketplace update`:
+
+```
+/plugin marketplace add lijnati/saas-brand-namer
+/plugin install modern-saas-builder@lijnati-skills
+```
+
 ### 2. Export / Compile into Single Rule Files
 
 Compile the skill along with all 16+ architectural reference playbooks into a standalone file:
